@@ -120,3 +120,48 @@
         bottom: -16px;
     }
 }
+
+
+// Invest section
+
+.invest {
+    position: relative;
+    width: 100%;
+
+    &-content {
+        padding: 40px 0;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        align-items: center;
+        &:after {
+            content: "";
+            display: block;
+            width: 70%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $primary-color;
+            z-index: 1;
+        }
+        
+        .title {
+            background-image: url(../../assets/img/quote.png);
+            background-size: 150px;
+            background-repeat: no-repeat;
+        }
+
+        .benifist {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 16px;
+            z-index: 2;
+
+            .item {
+                background-color: $danger-color;
+                color: $white-color;
+            }
+        }
+    }
+}
