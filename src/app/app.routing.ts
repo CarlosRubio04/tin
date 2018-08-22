@@ -4,9 +4,11 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { BenefitsComponent } from './benefits/benefits.component';
 
 const routes: Routes = [
     { path: 'home',             component: HomeComponent },
+    { path: 'benefits', component: BenefitsComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
