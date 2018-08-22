@@ -1,0 +1,68 @@
+@import "../../../assets/sass/app-kit/_variables";
+
+.footer {
+    position: relative;
+    background-color: $primary-color;
+    color: $white-color;
+    padding-top: 100px;
+    .row {
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.20);
+        padding: 22px 0;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .data {
+        line-height: 1;
+        margin: 22px 0;
+    }
+
+    &-cta {
+        background-color: $danger-color;
+        position: absolute;
+        top: -80px;
+        padding: 20px 20px 20px 80px;
+        border-radius: 0 20px 20px 0;
+        max-width: 400px;
+
+        p {
+            color: $white-color;
+            font-weight: 500;
+            font-size: 22px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            display: flex;
+            li {
+                margin-right: 12px;
+                a {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+.footer-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        li {
+            color: $light-gray;
+            font-size: 12px;
+            font-weight: 400;
+            a {
+                color: $white-color !important;
+                display: inline;
+                font-size: 14px;
+                text-transform: inherit;
+            }
+        }
+    }
+}
