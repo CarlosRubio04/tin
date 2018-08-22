@@ -127,11 +127,12 @@
 .invest {
     position: relative;
     width: 100%;
+    padding: 40px 0;
 
     &-content {
         padding: 40px 0;
         display: grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 250px 1fr;
         align-items: center;
         &:after {
             content: "";
@@ -140,7 +141,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 0;
+            right: -80px;
             background-color: $primary-color;
             z-index: 1;
         }
@@ -149,6 +150,7 @@
             background-image: url(../../assets/img/quote.png);
             background-size: 150px;
             background-repeat: no-repeat;
+            align-self: flex-start;
         }
 
         .benifist {
@@ -161,6 +163,42 @@
             .item {
                 background-color: $danger-color;
                 color: $white-color;
+                padding: 22px 32px;
+
+                p {
+                  font-size: 22px;
+                  font-weight: 400;  
+                }
+                .btn {
+                    padding-left: 0;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+// Accionistas
+
+.accionist {
+    background-color: $white-color;
+    padding: 40px 0;
+
+    &-logos {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 8px;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0 0 0;
+
+        .item {
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-height: 40px;
+                width: auto;
             }
         }
     }
