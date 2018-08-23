@@ -1,1 +1,29 @@
 @import "../../assets/sass/app-kit/_variables";
+
+.hero {
+    width: 100%;
+    position: relative;
+    margin-top: 128px;
+
+    &-container {
+        max-width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 400px;
+    }
+    &-cta {
+        img {
+            max-width: 100%;
+        }
+        .box {
+            width: 320px;
+            max-width: 320px;
+            padding: 20px;
+            background-color: $white-color;
+            position: absolute;
+            right: 30%;
+            top: 70%;
+            z-index: 2;
+        }
+    }
+}
