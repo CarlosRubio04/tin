@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'advantage', component: AdvantageComponent },
     { path: 'structure', component: StructureComponent},
     { path: 'contact', component: ContactComponent},
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '', component: HomeComponent }
 ];
 
 @NgModule({
