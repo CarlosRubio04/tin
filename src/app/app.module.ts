@@ -10,11 +10,14 @@ import { HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AdvantageComponent } from './advantage/advantage.component';
+import { StructureComponent } from './structure/structure.component';
+import { ContactComponent } from './contact/contact.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { HomeModule } from './home/home.module';
     NavbarComponent,
     FooterComponent,
     BenefitsComponent,
-    AdvantageComponent
+    AdvantageComponent,
+    StructureComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
