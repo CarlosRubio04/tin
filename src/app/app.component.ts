@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
     cta: boolean = false;
+    caracteristics: boolean = false;
+
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     ngOnInit() {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
@@ -65,5 +67,8 @@ export class AppComponent implements OnInit {
     
     showCta() {
         this.cta = !this.cta
+    }
+    showCaracteristics() {
+        this.caracteristics = !this.caracteristics
     }
 }

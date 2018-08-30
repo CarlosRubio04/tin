@@ -2,11 +2,22 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
+
+<div class="caracteristics" *ngIf="caracteristics">
+    <img src="../assets/img/abanico.png" alt="Abanico">
+</div>
+
 <!-- BTN CTA -->
 <button class="btn-danger btn btn-cta" (click)="showCta()">
      CONTÁCTATE CON NOSOTROS
 </button>
 <!-- BTN CTA -->
+
+<!-- BTN CARACTERISTICS -->
+<button class="btn-danger btn btn-caracteristics" (click)="showCaracteristics()">
+    CARACTERISTICAS <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+</button>
+<!-- BTN CARACTERISTICS -->
 
 <!-- Hero Form -->
 <div class="main-cta" *ngIf="cta">
