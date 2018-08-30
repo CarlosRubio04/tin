@@ -8,7 +8,7 @@
     cursor: pointer;
     text-transform: uppercase;
 
-    &.btn-border,
+    &.btn-border, 
     &.btn-link{
         background-color: $transparent-bg;
     }
@@ -46,11 +46,6 @@
     i{
         font-size: $font-size-medium;
         padding: 2px 0px;
-    }
-}
-.upgrade-pro{
-    .btn{
-        margin-top: 30px;
     }
 }
 .btn-link.btn-just-icon{

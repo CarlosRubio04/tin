@@ -1,0 +1,37 @@
+@import "../assets/sass/app-kit/_variables";
+
+.btn-cta {
+    position: fixed !important;
+    z-index: 99;
+    bottom: 20%;
+    right: -85px;
+    transform: rotate(-90deg);
+}
+
+.main-cta {
+    background-color: $white-color;
+    position: fixed;
+    bottom: 10px;
+    right: 80px;
+    max-width: 380px;
+    padding: 28px;
+    z-index: 99;
+    animation: cta .4s ease-in-out forwards;
+    -webkit-box-shadow: 4px 4px 8px 1px rgba(0,0,0,0.25);
+        -moz-box-shadow: 4px 4px 8px 1px rgba(0,0,0,0.25);
+        box-shadow: 4px 4px 8px 1px rgba(0,0,0,0.25);
+
+    h4 {
+        color: $primary-color;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes cta {
+    from {
+        transform: translateX(180px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

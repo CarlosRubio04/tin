@@ -13,16 +13,17 @@
 
 .form-control {
     background-color: $white-bg;
-    border: 1px solid $medium-gray;
+    border: 1px outset rgba($medium-gray, 0.5);
     border-radius: $border-radius-base;
     color: $font-color;
     font-size: $font-size-base;
-    @include input-size($padding-base-vertical, $padding-label-horizontal, $height-base);
+    padding: 12px 12px 12px 28px;
+    //@include input-size($padding-base-vertical, $padding-label-horizontal, $height-base);
     @include box-shadow(none);
 
     &:focus{
            background-color: $white-bg;
-           border: 1px solid $primary-color;
+           border: 1px outset solid rgba($primary-color, 0.5);
            @include box-shadow(none);
            outline: 0 !important;
     }
@@ -75,7 +76,7 @@
 .input-group{
     &.input-group-focus{
         .input-group-addon{
-              border-color: $dark-gray;
+              border-color: $primary-color;
         }
     }
 }
@@ -99,7 +100,7 @@
 .input-group-addon {
     background-color: $white-bg;
     border-radius: $border-radius-base;
-    color: #00063D;
+    color: $primary-color;
 
     &.no-border{
         border: medium none !important;
@@ -118,7 +119,7 @@
     .form-control:focus + &,
     .form-control:focus ~ &{
         background-color: $white-color;
-        border-color: $primary-color !important;
+        border: 1px solid $primary-color !important;
     }
 }
 
@@ -128,7 +129,6 @@
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
     border-right: 0 none;
-    padding-right: 0;
 }
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
@@ -167,6 +167,22 @@ textarea.form-control{
 }
 .form-group{
     position: relative;
+
+    .input-icon {
+        position: absolute;
+        top: 0;
+        width: 32px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba($primary-color, .5);
+    }
+}
+.form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .register-form .form-control{

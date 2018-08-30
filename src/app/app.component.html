@@ -1,3 +1,53 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
-<app-footer *ngIf="removeFooter()"></app-footer>
+<app-footer></app-footer>
+
+<!-- BTN CTA -->
+<button class="btn-danger btn btn-cta" (click)="showCta()">
+     CONTÁCTATE CON NOSOTROS
+</button>
+<!-- BTN CTA -->
+
+<!-- Hero Form -->
+<div class="main-cta" *ngIf="cta">
+    <h4 class="text-center">CONTÁCTATE CON NOSOTROS</h4>
+    <form>
+        <div class="form-group">
+            <span class="input-icon">
+                <i aria-hidden="true" class="fa fa-user"></i>
+            </span>
+            <input class="form-control" placeholder="Nombre" type="text">
+        </div>
+        <div class="form-group">
+            <span class="input-icon">
+                <i aria-hidden="true" class="fa fa-envelope"></i>
+            </span>
+            <input class="form-control" placeholder="Correo electrónico" type="text">
+        </div>
+        <div class="form-group">
+            <span class="input-icon">
+                <i aria-hidden="true" class="fa fa-phone"></i>
+            </span>
+            <input class="form-control" placeholder="Teléfono" type="text">
+        </div>
+        <div class="form-group">
+            <span class="input-icon">
+                <i aria-hidden="true" class="fa fa-mobile"></i>
+            </span>
+            <input class="form-control" placeholder="Celular" type="text">
+        </div>
+        <div class="form-group">
+            <span class="input-icon">
+                <i aria-hidden="true" class="fa fa-map-marker"></i>
+            </span>
+            <input class="form-control" placeholder="Ciudad" type="text">
+        </div>
+        <div class="form-group">
+            <textarea rows="4" cols="50" class="form-control" placeholder="Eres o has sido cliente de alguno de nuestros comisionistas autorizados, de cuál?"></textarea>
+        </div>
+        <div class="form-group form-btn">
+            <button class="btn btn-danger btn-lg">Enviar</button>
+        </div>
+    </form>
+</div>
+<!-- // Hero Form -->
