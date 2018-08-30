@@ -1,0 +1,10 @@
+@import "../../../assets/sass/app-kit/_variables";
+
+.nav-item {
+  .nav-link {
+      transition: color .4s ease-in-out;
+    &:hover {
+        color: $danger-color;
+    }
+  }  
+}

@@ -39,6 +39,14 @@
           border-radius: 1px;
           margin: 0 auto;
     }
+    
+
+    .navbar .navbar-brand {
+        padding: 4px;
+    }
+    .navbar .navbar-brand img {
+        max-width: 150px;
+    }
 
     .fog-low{
         margin-bottom: -35px;
