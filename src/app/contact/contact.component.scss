@@ -2,4 +2,34 @@
 
 .contact {
     margin: 160px 0;
+
+    h4 {
+        color: $primary-color;
+        font-weight: 600;
+    }
+
+    .input-group, .form-group {
+        margin: 10px 0;
+    }
+
+    &-container {
+        background-color: $white-color;
+        padding: 40px;
+    }
+
+    &-info {
+        position: relative;
+        margin-top: 20px;
+        .item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            grid-template-rows: 80px;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                color: $danger-color;
+            }
+        }
+    }
 }
