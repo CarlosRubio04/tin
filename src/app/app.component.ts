@@ -5,16 +5,42 @@ import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/platform-browser';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import {
+    transition,
+    trigger,
+    query,
+    style,
+    animate,
+    group,
+    animateChild,
+    state
+} from '@angular/animations';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
+    animations: [
+        trigger('loaderAnimation', [
+            state('show', style({
+                opacity: 1,
+                display: 'flex',
+                transformOrigin: 'center',
+            })),
+            state('hide', style({
+                opacity: 0,
+                display: 'none',
+                transformOrigin: 'center',
+            })),
+            transition('show => hide', animate('700ms ease-out')),
+            transition('hide => show', animate('100ms ease-in'))
+        ]),
+    ]
 })
 export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
-
+    loader = 'show';
     cta: boolean = false;
     caracteristics: boolean = false;
 
@@ -28,6 +54,11 @@ export class AppComponent implements OnInit {
                 window.document.activeElement.scrollTop = 0;
             }
             this.navbar.sidebarClose();
+
+            setTimeout(() => {
+                this.loader = 'hide';
+            }, 700);
+
         });
         // this.renderer.listenGlobal('window', 'scroll', (event) => {
         //     const number = window.scrollY;

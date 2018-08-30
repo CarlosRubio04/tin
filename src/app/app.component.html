@@ -1,8 +1,14 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
-
-
+<div class="loader" [@loaderAnimation]="loader">
+    <div class="swapping-squares-spinner" :style="spinnerStyle">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+</div>
 <div class="caracteristics" *ngIf="caracteristics">
     <img src="../assets/img/abanico.png" alt="Abanico">
 </div>
