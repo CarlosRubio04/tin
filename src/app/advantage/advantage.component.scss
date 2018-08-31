@@ -21,10 +21,7 @@
                         ". cinco"
                         "seis ."
                         ". siete"
-                        "ocho ."
-                        ". nueve"
-                        "diez ."
-                        "once once";
+                        "ocho ocho";
 
     &:after {
         content: "";
@@ -139,15 +136,6 @@
         }
         &:nth-of-type(8) {
             grid-area: ocho;
-        }
-        &:nth-of-type(9) {
-            grid-area: nueve;
-        }
-        &:nth-of-type(10) {
-            grid-area: diez;
-        }
-        &:nth-of-type(11) {
-            grid-area: once;
         }
 
         &:last-child {

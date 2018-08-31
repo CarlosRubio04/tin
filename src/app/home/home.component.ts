@@ -10,9 +10,8 @@ import { MainService } from '../services/main.service';
 })
 
 export class HomeComponent implements OnInit {
-    
+
     lead = {};
-    cosa;
     rForm: FormGroup;
     post: any;
     nombre: string = '';
