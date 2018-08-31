@@ -10,11 +10,11 @@ import { StructureComponent } from './structure/structure.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-    { path: 'home',             component: HomeComponent },
-    { path: 'benefits', component: BenefitsComponent },
-    { path: 'advantage', component: AdvantageComponent },
-    { path: 'structure', component: StructureComponent},
-    { path: 'contact', component: ContactComponent},
+    { path: 'inicio',             component: HomeComponent },
+    { path: 'inversion', component: BenefitsComponent },
+    { path: 'beneficios', component: AdvantageComponent },
+    { path: 'estructura', component: StructureComponent},
+    { path: 'contacto', component: ContactComponent},
     { path: '', component: HomeComponent }
 ];
 
