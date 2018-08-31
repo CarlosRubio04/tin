@@ -3,34 +3,66 @@
 .hero {
     width: 100%;
     position: relative;
-    margin-top: 128px;
+    margin-top: 158px;
 
     &-container {
         max-width: 80%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 400px;
+        grid-template-columns: 1fr 500px;
+        grid-column-gap: 60px;
+    }
+    &-content {
+        padding-left: 40px;
     }
     &-cta {
         img {
             max-width: 100%;
         }
         .box {
-            width: 320px;
-            max-width: 320px;
+            width: 310px;
+            max-width: 310px;
             padding: 20px;
             background-color: $white-color;
             position: absolute;
-            right: 30%;
-            top: 70%;
+            right: 45%;
+            top: 50%;
             z-index: 2;
+
+            h4 {
+                font-family: 'Roboto', sans-serif !important;
+                font-weight: 800;
+                text-align: center;
+            }
+
+            .item {
+                padding: 20px 20px 20px 40px;
+                position: relative;
+
+                &:nth-of-type(1) {
+                    border-bottom: 1px solid #CDCDCD;
+                }
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 30%;
+                    width: 25px;
+                    height: 25px;
+                    background-color: $primary-color;
+                    border-radius: 50%;
+                    z-index: 9;
+                }
+            }
         }
     }
 }
 
 .distribution {
     position: relative;
-    margin-top: 150px;
+    margin-top: 210px;
 
     &-container {
         background-color: $white-color;
@@ -43,9 +75,54 @@
     }
 }
 
+.galery {
+    position: relative;
+    margin-top: 40px;
+
+    &-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(200px, 400fr));
+        grid-template-rows: repeat(2, 180px);
+        grid-template-areas: "one one tow tow four"
+                            "one one three three five";
+        grid-gap: 8px;
+    }
+    
+    .item {
+        background-size: cover;
+        background-position: center;
+        -webkit-box-shadow: -2px -1px 6px 1px rgba(0,0,0,0.10);
+        -moz-box-shadow: -2px -1px 6px 1px rgba(0,0,0,0.10);
+        box-shadow: -2px -1px 6px 1px rgba(0,0,0,0.10);
+
+        &:nth-last-of-type(1) {
+            grid-area: one;
+            background-image: url(../../assets/img/001.jpg);
+        }
+        &:nth-last-of-type(2) {
+            grid-area: tow;
+            background-image: url(../../assets/img/002.jpg);
+        }
+        &:nth-last-of-type(3) {
+            grid-area: three;
+            background-image: url(../../assets/img/006.jpg);
+        }
+        &:nth-last-of-type(4) {
+            grid-area: four;
+            background-image: url(../../assets/img/004.jpg);
+        }
+        &:nth-last-of-type(5) {
+            grid-area: five;
+            background-image: url(../../assets/img/005.jpg);
+        }
+    }                     
+            
+}
+
 
 .value {
-    margin: 80px 0;
+    margin: 100px 0;
 }
 .charts {
     margin-top: 40px;
@@ -73,15 +150,17 @@
     svg {
         .uno {
           stroke-dasharray: 0, 1000;
-          animation: uno 1s ease-in forwards; 
+          animation: uno .6s ease-in forwards; 
         }
         .dos {
           stroke-dasharray: 0, 1000; 
-          animation: dos 2s ease-in forwards;
+          animation: dos 1.2s ease-in forwards;
+          animation-delay: .5s;
         }
         .tres {
           stroke-dasharray: 0, 1000;
-          animation: tres 3s ease-in forwards; 
+          animation: tres 1.8s ease-in forwards; 
+          animation-delay: 1s;
         }
     }
 }
