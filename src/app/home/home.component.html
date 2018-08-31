@@ -28,44 +28,44 @@
         <!-- Hero Form -->
             <div class="hero-form">
                 <h4>CONTÁCTATE CON <br> NOSOTROS</h4>
-                <form>
+                
                     <div class="form-group">
                         <span class="input-icon">
                             <i aria-hidden="true" class="fa fa-user"></i>
                         </span>
-                        <input class="form-control" placeholder="Nombre" type="text">
+                        <input class="form-control" placeholder="Nombre" type="text" [(ngModel)]="nombre">
                     </div>
                     <div class="form-group">
                         <span class="input-icon">
                             <i aria-hidden="true" class="fa fa-envelope"></i>
                         </span>
-                        <input class="form-control" placeholder="Correo electrónico" type="text">
+                        <input class="form-control" placeholder="Correo electrónico" type="text" [(ngModel)]="email">
                     </div>
                     <div class="form-group">
                         <span class="input-icon">
                             <i aria-hidden="true" class="fa fa-phone"></i>
                         </span>
-                        <input class="form-control" placeholder="Teléfono" type="text">
+                        <input class="form-control" placeholder="Teléfono" type="text" [(ngModel)]="tel">
                     </div>
                     <div class="form-group">
                         <span class="input-icon">
                             <i aria-hidden="true" class="fa fa-mobile"></i>
                         </span>
-                        <input class="form-control" placeholder="Celular" type="text">
+                        <input class="form-control" placeholder="Celular" type="text" [(ngModel)]="cel">
                     </div>
                     <div class="form-group">
                         <span class="input-icon">
                             <i aria-hidden="true" class="fa fa-map-marker"></i>
                         </span>
-                        <input class="form-control" placeholder="Ciudad" type="text">
+                        <input class="form-control" placeholder="Ciudad" type="text" [(ngModel)]="ciudad">
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" cols="50" class="form-control" placeholder="Eres o has sido cliente de alguno de nuestros comisionistas autorizados, de cuál?"></textarea>
+                        <textarea rows="4" cols="50" class="form-control" [(ngModel)]="mensaje" placeholder="Eres o has sido cliente de alguno de nuestros comisionistas autorizados, de cuál?"></textarea>
                     </div>
                     <div class="form-group form-btn">
-                        <button class="btn btn-danger btn-lg">Enviar</button>
+                        <button class="btn btn-danger btn-lg" (click)="sendData()">Enviar</button>
                     </div>
-                </form>
+                
             </div>
         <!-- // Hero Form -->
 
