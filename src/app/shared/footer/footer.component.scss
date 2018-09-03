@@ -5,6 +5,11 @@
     background-color: $primary-color;
     color: $white-color;
     padding-top: 100px;
+
+    @media (max-width: 767px) {
+        padding-top: 60px;
+    }
+
     .row {
         border-bottom: 1px solid rgba($color: #fff, $alpha: 0.20);
         padding: 22px 0;
@@ -26,6 +31,11 @@
         padding: 20px 20px 20px 80px;
         border-radius: 0 20px 20px 0;
         max-width: 400px;
+
+        @media (max-width: 767px) {
+            border-radius: 0;
+            padding: 20px;
+        }
 
         p {
             color: $white-color;

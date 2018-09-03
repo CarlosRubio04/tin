@@ -39,6 +39,7 @@
             list-style: none;
             padding-left: 0;
             li {
+                margin-top: 8px;
                 a {
                     color: $medium-gray;
                 }
@@ -83,6 +84,7 @@
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff291e', endColorstr='#890700', GradientType=1 );
             text-align: center;
             font-size: 16px;
+            transition: all .2s ease-in-out;
             
             &:before {
                 content: "";
@@ -100,6 +102,10 @@
                 margin-left: 45px;
                 color: #484D56;
                 font-size: 12px;
+            }
+
+            &:hover {
+                background-position: 60px 60px;
             }
         }
     }
@@ -243,12 +249,48 @@
             }
             
             .item {
-                background-color: $danger-color;
+                position: relative;
+                background: rgba(255,41,30,1);
+                background: -moz-linear-gradient(-45deg, rgba(255,41,30,1) 0%, rgba(137,7,0,1) 100%);
+                background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,41,30,1)), color-stop(100%, rgba(137,7,0,1)));
+                background: -webkit-linear-gradient(-45deg, rgba(255,41,30,1) 0%, rgba(137,7,0,1) 100%);
+                background: -o-linear-gradient(-45deg, rgba(255,41,30,1) 0%, rgba(137,7,0,1) 100%);
+                background: -ms-linear-gradient(-45deg, rgba(255,41,30,1) 0%, rgba(137,7,0,1) 100%);
+                background: linear-gradient(135deg, rgba(255,41,30,1) 0%, rgba(137,7,0,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff291e', endColorstr='#890700', GradientType=1 );
                 color: $white-color;
                 padding: 22px 32px;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
 
                 @media (max-width: 767px){
                     padding: 12px 22px;   
+                }
+
+                &:hover {
+                    background-position: 286px 0px;
+                }
+                
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+                    bottom: 4px;
+                    right: 4px;
+                    z-index: 9;
+                    background-position: center;
+                    background-size: 100%;
+                }
+                &:nth-of-type(1):after {
+                    background-image: url(../../assets/img/benefits.png);
+                }
+                &:nth-of-type(2):after {
+                    background-image: url(../../assets/img/invierte.png);
+                }
+                &:nth-of-type(3):after {
+                    background-image: url(../../assets/img/estructura.png);
                 }
 
                 p {

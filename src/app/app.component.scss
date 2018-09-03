@@ -25,6 +25,12 @@
         color: $primary-color;
         margin-bottom: 20px;
     }
+
+    @media (max-width: 767px) {
+      max-width: 88%;
+      right: 12%;
+      bottom: 0;
+    }
 }
 .btn-caracteristics {
     position: fixed;

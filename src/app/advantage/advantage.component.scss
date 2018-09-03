@@ -3,6 +3,9 @@
 .advantage {
     position: relative;
     margin: 200px 0;
+     @media (max-width: 767px) {
+         margin: 100px 0 0 0    ;
+     }
 }
 
 .line {
@@ -23,12 +26,29 @@
                         ". siete"
                         "ocho ocho";
 
+    @media (max-width: 767px) {
+        padding-bottom: 40px;
+        grid-row-gap: 20px;
+        grid-template-columns: 250px;
+        grid-template-rows: repeat(11, auto);
+        justify-content: center;
+        align-items: center;
+        grid-template-areas: "uno"
+                            "dos"
+                            "tres"
+                            "cuatro"
+                            "cinco"
+                            "seis"
+                            "siete"
+                            "ocho";
+    }
+
     &:after {
         content: "";
         position: absolute;
         top: 40px;
         bottom: 0;
-        left: calc(50% - 1px);
+        left: 10px;
         border: 2px solid $danger-color;
     }
     
@@ -41,7 +61,11 @@
         border: 1px outset rgba($primary-color, .90);
         z-index: 1;
 
-        
+        p {
+            @media (max-width: 767px) {
+                font-size: 12px;
+            }
+        }
 
         span {
             display: block;
@@ -50,6 +74,9 @@
         &:nth-of-type(odd) {
             p {
                 text-align: left;
+                @media (max-width: 767px) {
+                    text-align: right;
+                }
             }
             span {
                 text-align: right;
@@ -86,6 +113,10 @@
             }
             span {
                 text-align: left;
+                @media (max-width: 767px) {
+                    text-align: right;
+                }
+                
             }
             &:after {
                 content: "";
@@ -99,6 +130,10 @@
                 border-radius: 50%;
                 top: 30px;
                 right: -52px;
+                
+                 @media (max-width: 767px) {
+                    left: -50px;
+                 }
             }
             &:before {
                 content: "";
@@ -110,6 +145,12 @@
                 width: 14px;
                 height: 22px;
                 background-image: url(../../assets/img/flecha-o.png);
+
+                @media (max-width: 767px) {
+                    top: 30px;
+                    left: -15px !important;
+                    background-image: url(../../assets/img/flecha.png);
+                }
             }
         }
 
@@ -142,9 +183,15 @@
             max-width: 400px;
             justify-self: center;
             margin-top: 80px;
+             @media (max-width: 767px) {
+                 margin-top: 0;
+             }
 
             &:after {
                 display: none;
+                 @media (max-width: 767px){
+                    display: block;
+                 }
             }
             &:before {
                 content: "";
@@ -157,6 +204,11 @@
                 height: 22px;
                 background-image: url(../../assets/img/flecha-o.png);
                 transform: rotate(-90deg);
+
+                 @media (max-width: 767px){
+                   transform: rotate(180deg);
+                   top: 30px  
+                 }
             }
             
         }

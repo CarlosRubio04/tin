@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { MainService } from '../services/main.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     mensaje: string = '';
     titleAlert: string = 'Completa este campo';
 
-    constructor(private mainService: MainService, private fb: FormBuilder) {
+    constructor(private mainService: MainService, private fb: FormBuilder, private modalService: NgbModal) {
         this.rForm = fb.group({
             'nombre': [null, Validators.compose([
                 Validators.required,
@@ -51,6 +52,10 @@ export class HomeComponent implements OnInit {
             ])]
         });
 
+    }
+
+    open(content) {
+        this.modalService.open(content);
     }
 
     public sendData(lead) {
