@@ -16,6 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ThaksComponent } from './thankyou/thaks.component';
 
 import { HomeModule } from './home/home.module';
 import { MainService } from './services/main.service';
@@ -29,7 +30,8 @@ import { MainService } from './services/main.service';
     BenefitsComponent,
     AdvantageComponent,
     StructureComponent,
-    ContactComponent
+    ContactComponent,
+    ThaksComponent
   ],
   imports: [
     BrowserModule,

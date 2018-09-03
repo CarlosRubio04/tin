@@ -8,6 +8,7 @@ import { AdvantageComponent } from './advantage/advantage.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { StructureComponent } from './structure/structure.component';
 import { ContactComponent } from './contact/contact.component';
+import { ThaksComponent } from './thankyou/thaks.component';
 
 const routes: Routes = [
     { path: 'inicio',             component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'beneficios', component: AdvantageComponent },
     { path: 'estructura', component: StructureComponent},
     { path: 'contacto', component: ContactComponent},
+    { path: 'thanks', component: ThaksComponent},
     { path: '', component: HomeComponent }
 ];
 
