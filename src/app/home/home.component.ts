@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Http, Headers, Response } from '@angular/http';
 import { MainService } from '../services/main.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { MainService } from '../services/main.service';
 
 export class HomeComponent implements OnInit {
 
-    lead = {};
     rForm: FormGroup;
     post: any;
     nombre: string = '';
@@ -23,7 +21,6 @@ export class HomeComponent implements OnInit {
     titleAlert: string = 'Completa este campo';
 
     constructor(private mainService: MainService, private fb: FormBuilder) {
-
         this.rForm = fb.group({
             'nombre': [null, Validators.compose([
                 Validators.required,
@@ -51,7 +48,7 @@ export class HomeComponent implements OnInit {
                 Validators.required,
                 Validators.minLength(20),
                 Validators.maxLength(340),
-            ])],
+            ])]
         });
 
     }

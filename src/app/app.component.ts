@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MainService } from './services/main.service';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/platform-browser';
@@ -44,7 +46,48 @@ export class AppComponent implements OnInit {
     cta: boolean = false;
     caracteristics: boolean = false;
 
-    constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+    rForm: FormGroup;
+    post: any;
+    nombre: string = '';
+    tel: string = '';
+    cel: string = '';
+    email: string = '';
+    ciudad: string = '';
+    mensaje: string = '';
+    titleAlert: string = 'Completa este campo';
+
+    constructor(private mainService: MainService, private fb: FormBuilder, private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {
+
+        this.rForm = fb.group({
+            'nombre': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(3),
+                Validators.maxLength(140)
+            ])],
+            'cel': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(7),
+                Validators.maxLength(7)
+            ])],
+            'tel': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(10),
+                Validators.maxLength(10)
+            ])],
+            'email': [null, Validators.compose([
+                Validators.required,
+                Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+            ])],
+            'ciudad': [null, Validators.compose([
+                Validators.required
+            ])],
+            'mensaje': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(20),
+                Validators.maxLength(340),
+            ])]
+        });
+    }
     ngOnInit() {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -60,16 +103,7 @@ export class AppComponent implements OnInit {
             }, 700);
 
         });
-        // this.renderer.listenGlobal('window', 'scroll', (event) => {
-        //     const number = window.scrollY;
-        //     if (number > 150 || window.pageYOffset > 150) {
-        //         // add logic
-        //         navbar.classList.remove('navbar-transparent');
-        //     } else {
-        //         // remove logic
-        //         navbar.classList.add('navbar-transparent');
-        //     }
-        // });
+
         var ua = window.navigator.userAgent;
         var trident = ua.indexOf('Trident/');
         if (trident > 0) {
@@ -94,8 +128,10 @@ export class AppComponent implements OnInit {
             return true;
         }
     }
-
-    
+    public sendData(lead) {
+        console.log(lead);
+        this.mainService.sendLead(lead);
+    }
     showCta() {
         this.cta = !this.cta
     }
