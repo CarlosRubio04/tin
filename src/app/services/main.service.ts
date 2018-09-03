@@ -27,16 +27,7 @@ export class MainService {
          * sendLead
          */
     public sendLead(lead) {
-        this.http.get(`http://localhost:4200/back/?campaignId=${this.campaignId}
-            &partnerId=${this.partnerId}
-            &type=${this.tipo}
-            &nombre=${lead.nombre}
-            &tel=${lead.tel}
-            &cel=${lead.cel}
-            &email=${lead.email}
-            &ciudad=${lead.ciudad}
-            &ocupacion=${lead.ocupacion}
-            &mensaje=${lead.mensaje}`)
+        this.http.get(`http://ares.3dm.com.co/bobm/Views/WS/?campaignId=${this.campaignId}&partnerId=${this.partnerId}&type=${this.tipo}&nombre=${lead.nombre}&tel=${lead.tel}&cel=${lead.cel}&email=${lead.email}&ciudad=${lead.ciudad}&ocupacion=${lead.ocupacion}&mensaje=${lead.mensaje}`)
             .subscribe((res: Response) => {
                 const backOffice = res;
                 console.log(backOffice);
@@ -45,7 +36,7 @@ export class MainService {
                     // this.router.navigate(['/gracias']);
                     console.log('ok');
                 } else {
-                    console.log(backOffice);
+                    //console.log(backOffice);
                     // this.sendingData = false;
                     // this.callback = 'Hubo un error, por favor intentalo de nuevo';
                 }

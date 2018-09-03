@@ -15,26 +15,50 @@ export class HomeComponent implements OnInit {
     rForm: FormGroup;
     post: any;
     nombre: string = '';
-    tel: number;
-    cel: number;
+    tel: string = '';
+    cel: string = '';
     email: string = '';
     ciudad: string = '';
     mensaje: string = '';
+    titleAlert: string = 'Completa este campo';
 
-    constructor(private mainService: MainService) {
-        this.lead = {
-            nombre: this.nombre,
-            tel: this.tel,
-            cel: this.cel,
-            email: this.email,
-            ciudad: this.ciudad,
-            mensaje: this.mensaje
-        }
+    constructor(private mainService: MainService, private fb: FormBuilder) {
+
+        this.rForm = fb.group({
+            'nombre': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(3),
+                Validators.maxLength(140)
+            ])],
+            'cel': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(7),
+                Validators.maxLength(7)
+            ])],
+            'tel': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(10),
+                Validators.maxLength(10)
+            ])],
+            'email': [null, Validators.compose([
+                Validators.required,
+                Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+            ])],
+            'ciudad': [null, Validators.compose([
+                Validators.required
+            ])],
+            'mensaje': [null, Validators.compose([
+                Validators.required,
+                Validators.minLength(20),
+                Validators.maxLength(340),
+            ])],
+        });
+
     }
 
-    public sendData() {
-        console.log(this.lead);
-        this.mainService.sendLead(this.lead);
+    public sendData(lead) {
+        console.log(lead);
+        this.mainService.sendLead(lead);
     }
 
     ngOnInit() {}

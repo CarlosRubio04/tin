@@ -61,11 +61,12 @@
         border-radius: $border-radius-large;
         font-size: $font-size-base;
         color: $danger-color;
-        font-size: .8rem;
+        font-size: .7rem;
         position: absolute;
         top: 100%;
         padding-left: $padding-label-horizontal;
         vertical-align: middle;
+        transition: all .3s ease-in-out;
     }
 
     .open &{
