@@ -43,54 +43,75 @@
                      Ponte en contácto
                 </h4>
 
-                <form>
+                <form [formGroup]="rForm" (ngSubmit)="sendData(rForm.value)" autocomplete="off">
                     <div class="row">
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-user"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Nombre" type="text">
+                            <input class="form-control" placeholder="Nombre" type="text" formControlName="nombre" id="nombre">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['nombre'].valid && rForm.controls['nombre'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
 
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-envelope"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Correo electrónico" type="text">
+                            <input class="form-control" placeholder="Correo electrónico" type="text" formControlName="email" id="email">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
 
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-phone"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Teléfono" type="text">
+                            <input class="form-control" placeholder="Teléfono" type="number" formControlName="tel" id="tel">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['tel'].valid && rForm.controls['tel'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
 
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-mobile"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Celular" type="text">
+                            <input class="form-control" placeholder="Celular" type="number" formControlName="cel" id="cel">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['cel'].valid && rForm.controls['cel'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
 
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-user-o"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Ocupación" type="text">
+                            <input class="form-control" placeholder="Ocupación" type="text" formControlName="ocupacion" id="ocupacion">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['ocupacion'].valid && rForm.controls['ocupacion'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
 
-                        <div class="input-group col-md-6">
-                            <span class="input-group-addon" id="basic-addon1">
+                        <div class="form-group col-md-6">
+                            <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-map-marker"></i>
                             </span>
-                            <input aria-describedby="basic-addon1" class="form-control" placeholder="Ciudad" type="text">
+                            <input class="form-control" placeholder="Ciudad" type="text" formControlName="ciudad" id="ciudad">
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['ciudad'].valid && rForm.controls['ciudad'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea rows="4" cols="50" class="form-control" placeholder="Eres o has sido cliente de alguno de nuestros comisionistas autorizados, de cuál?"></textarea>
+                            <textarea rows="4" cols="50" class="form-control" formControlName="mensaje" id="mensaje" placeholder="Eres o has sido cliente de alguno de nuestros comisionistas autorizados, de cuál?"></textarea>
+                            <div class="form-control-feedback" *ngIf="!rForm.controls['mensaje'].valid && rForm.controls['mensaje'].touched">
+                                {{ titleAlert }}
+                            </div>
                         </div>
                         <div class="form-group col-md-12">
-                            <button class="btn btn-danger">Enviar</button>
+                            <button class="btn btn-danger btn-lg" type="submit" [disabled]="!rForm.valid">Enviar</button>
                         </div>
                     </div>
                 </form>
