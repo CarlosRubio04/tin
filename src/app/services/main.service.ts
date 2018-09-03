@@ -31,13 +31,10 @@ export class MainService {
                 const backOffice = res;
                 console.log(backOffice);
                 if (backOffice.ok) {
-                    // this.callback = 'Datos enviados correctamente';
-                    // this.router.navigate(['/gracias']);
+                    this.router.navigate(['/thanks']);
                     console.log('ok');
                 } else {
-                    //console.log(backOffice);
-                    // this.sendingData = false;
-                    // this.callback = 'Hubo un error, por favor intentalo de nuevo';
+                   alert('Hubo un error al enviar los datos, por favor intentalo de nuevo');
                 }
             });
     }
