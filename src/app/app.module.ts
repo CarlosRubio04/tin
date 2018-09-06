@@ -20,6 +20,7 @@ import { ThaksComponent } from './thankyou/thaks.component';
 
 import { HomeModule } from './home/home.module';
 import { MainService } from './services/main.service';
+import { GoogleAnalyticsEventsService } from './services/ga.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { MainService } from './services/main.service';
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [MainService],
+  providers: [ MainService, GoogleAnalyticsEventsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,6 +18,9 @@ import {
     state
 } from '@angular/animations';
 
+import { GoogleAnalyticsEventsService } from './services/ga.service';
+declare let ga: any;
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -56,7 +59,24 @@ export class AppComponent implements OnInit {
     mensaje: string = '';
     titleAlert: string = 'Completa este campo';
 
-    constructor(private mainService: MainService, private fb: FormBuilder, private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {
+    constructor(private mainService: MainService, 
+        private fb: FormBuilder, 
+        private renderer : Renderer, 
+        private router: Router, @Inject(DOCUMENT,) 
+        private document: any, 
+        private element : ElementRef, 
+        public locationx: Location,
+        public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {
+
+        this.router.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                ga('set', 'page', event.urlAfterRedirects);
+                ga('send', 'pageview', {
+                    'page': location.pathname + location.search + location.hash,
+                    'location': location.href,
+                });
+            }
+        });
 
         this.rForm = fb.group({
             'nombre': [null, Validators.compose([
@@ -119,7 +139,7 @@ export class AppComponent implements OnInit {
 
     }
     removeCta() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
+        var titlee = this.locationx.prepareExternalUrl(this.locationx.path());
         titlee = titlee.slice( 1 );
         if(titlee === '' || titlee === 'home'){
             return false;
