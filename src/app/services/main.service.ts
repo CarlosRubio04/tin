@@ -26,7 +26,7 @@ export class MainService {
          * sendLead
          */
     public sendLead(lead) {
-        this.http.get(`http://pruebas.charlsdesigner.com/back/?campaignId=${this.campaignId}&partnerId=${this.partnerId}&type=${this.tipo}&nombre=${lead.nombre}&tel=${lead.tel}&cel=${lead.cel}&email=${lead.email}&ciudad=${lead.ciudad}&ocupacion=${lead.ocupacion}&mensaje=${lead.mensaje}`)
+        this.http.get(`http://tin.titularizadora.com/tin/back/?campaignId=${this.campaignId}&partnerId=${this.partnerId}&type=${this.tipo}&nombre=${lead.nombre}&tel=${lead.tel}&cel=${lead.cel}&email=${lead.email}&ciudad=${lead.ciudad}&ocupacion=${lead.ocupacion}&mensaje=${lead.mensaje}`)
             .subscribe((res: Response) => {
                 const backOffice = res;
                 console.log(backOffice);
