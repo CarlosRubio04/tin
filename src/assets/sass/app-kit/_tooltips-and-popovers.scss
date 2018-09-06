@@ -128,11 +128,13 @@
     opacity: 1 !important;
 }
 
-.popover{
+.popover {
     border-radius: 6px;
     background-color: #FFFCF5;
     color: #66615b;
-    font-weight: 400;
+    font-weight: 100;
+    font-size: 10px;
+    width: 200px;
     padding: 0;
     z-index: 1031;
     -webkit-box-shadow: none;
@@ -153,7 +155,7 @@
 }
 .popover-body{
     background-color: #FFFFFF;
-    padding: 15px;
+    padding: 8px;
     text-align: center;
     border-radius: 6px;
 }
