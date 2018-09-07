@@ -45,17 +45,13 @@ export class HomeComponent implements OnInit {
             'ciudad': [null, Validators.compose([
                 Validators.required
             ])],
-            'mensaje': [null, Validators.compose([
-                Validators.required,
-                Validators.minLength(20),
-                Validators.maxLength(340),
-            ])]
+            'mensaje': [null]
         });
 
     }
 
     open(content) {
-        this.modalService.open(content);
+        this.modalService.open(content, { size: 'lg' });
     }
 
     public sendData(lead) {

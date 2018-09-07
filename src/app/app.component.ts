@@ -101,11 +101,7 @@ export class AppComponent implements OnInit {
             'ciudad': [null, Validators.compose([
                 Validators.required
             ])],
-            'mensaje': [null, Validators.compose([
-                Validators.required,
-                Validators.minLength(20),
-                Validators.maxLength(340),
-            ])]
+            'mensaje': [null]
         });
     }
     ngOnInit() {

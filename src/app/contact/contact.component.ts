@@ -44,14 +44,8 @@ export class ContactComponent implements OnInit {
             'ciudad': [null, Validators.compose([
                 Validators.required
             ])],
-            'ocupacion': [null, Validators.compose([
-                Validators.required
-            ])],
-            'mensaje': [null, Validators.compose([
-                Validators.required,
-                Validators.minLength(20),
-                Validators.maxLength(340),
-            ])]
+            'ocupacion': [null],
+            'mensaje': [null]
         });
     }
 
