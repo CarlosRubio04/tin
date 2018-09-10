@@ -45,6 +45,9 @@ export class ContactComponent implements OnInit {
                 Validators.required
             ])],
             'ocupacion': [null],
+            'politica': [null, Validators.compose([
+                Validators.required
+            ])],
             'mensaje': [null]
         });
     }

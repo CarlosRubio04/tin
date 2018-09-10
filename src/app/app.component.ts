@@ -101,6 +101,9 @@ export class AppComponent implements OnInit {
             'ciudad': [null, Validators.compose([
                 Validators.required
             ])],
+            'politica': [null, Validators.compose([
+                Validators.required
+            ])],
             'mensaje': [null]
         });
     }

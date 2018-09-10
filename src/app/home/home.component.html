@@ -83,15 +83,27 @@
                         {{ titleAlert }}
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica">
+                            <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf" target="_blank">
+                               <small>Acepto la política de Datos Personales</small> 
+                            </a>
+                            <span class="form-check-sign"></span>
+                        </label>
+                    </div>
+                </div>
                 <div class="form-group form-btn">
                     <button class="btn btn-danger btn-lg" type="submit" [disabled]="!rForm.valid">Enviar</button>
                 </div>
             </form>
         </div>
         <!-- // Hero Form -->
-
     </div>
 </section>
+
+<p class="texto-flot">Emisión Octubre 10 contacta a nuestros comisionistas <br> autorizados antes del 5 de octubre 2018</p>
 
 
 <!-- Seccion mitos -->
@@ -166,7 +178,7 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <p>¡Invertir no llega a ser riesgoso!</p>
+                        <p>Temor a perder la inversión</p>
                         <h4>Con Tin el nivel de riesgo es moderado</h4>
                     </div>
                     <div class="card-action">
@@ -176,7 +188,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card" routerLink="/estructura">
+                <div class="card" (click)="scroll()">
                     <div class="card-head">
                         <div class="svg">
                             <svg width="137px" height="132px" viewBox="0 0 137 132">
@@ -204,10 +216,10 @@
                     </div>
                     <div class="card-content">
                         <p>¡No necesitas ser experto en finanzas!</p>
-                        <h4>Con Tin tenemos asesoría por parte de Titularizadora</h4>
+                        <h4>Con TIN tienes la asesoría de nuestros comisionistas autorizados</h4>
                     </div>
                     <div class="card-action">
-                        <button class="btn btn-danger" routerLink="/estructura">ver más</button>
+                        <button class="btn btn-danger" (click)="scroll()">ver más</button>
                     </div>
                 </div>
             </div>
@@ -224,9 +236,11 @@
         <div class="row">
             <div class="col-md-12 invest-content">
                 <div class="title">
-                    <p>Conoce más,</p>
+                    <p>Conoce más:</p>
                     <h2 class="special-text">
-                        INVIERTE <br> SEGURO
+                         Toma una <br>
+                         decisión <br>
+                         inteligente
                     </h2>
                 </div>
 
@@ -266,7 +280,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="special-text text-center">
-                    NuEstros accionistas
+                    nuestros principales accionistas
                 </h1>
             </div>
         </div>

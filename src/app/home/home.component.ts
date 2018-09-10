@@ -45,6 +45,9 @@ export class HomeComponent implements OnInit {
             'ciudad': [null, Validators.compose([
                 Validators.required
             ])],
+            'politica': [null, Validators.compose([
+                Validators.required
+            ])],
             'mensaje': [null]
         });
 
@@ -58,6 +61,10 @@ export class HomeComponent implements OnInit {
         console.log(lead);
         this.mainService.sendLead(lead);
     }
+
+   scroll() {
+       window.scrollTo(0, document.body.scrollHeight);
+   }
 
     ngOnInit() {}
 }
