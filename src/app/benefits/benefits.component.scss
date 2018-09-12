@@ -90,10 +90,12 @@
         }
     }
 }
-
+.video {
+    margin-top: 150px;
+}
 .distribution {
     position: relative;
-    margin-top: 210px;
+    margin-top: 20px;
     @media (max-width: 767px){
         margin-top: 80px;
     }
