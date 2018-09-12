@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { MainService } from './services/main.service';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
@@ -59,14 +60,19 @@ export class AppComponent implements OnInit {
     mensaje: string = '';
     titleAlert: string = 'Completa este campo';
 
+    partnerId: string;
+
     constructor(private mainService: MainService, 
         private fb: FormBuilder, 
-        private renderer : Renderer, 
+        private renderer : Renderer,
+        private route: ActivatedRoute,
         private router: Router, @Inject(DOCUMENT,) 
         private document: any, 
         private element : ElementRef, 
         public locationx: Location,
         public googleAnalyticsEventsService: GoogleAnalyticsEventsService) {
+
+        this.partnerId = this.route.snapshot.queryParams['partnerId'] || '1';
 
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
@@ -148,7 +154,7 @@ export class AppComponent implements OnInit {
         }
     }
     public sendData(lead) {
-        console.log(lead);
+        lead.partnerId = this.partnerId;
         this.mainService.sendLead(lead);
     }
     showCta() {

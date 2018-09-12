@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute } from '@angular/router';
 import { MainService } from '../services/main.service';
 
 @Component({
@@ -21,7 +22,15 @@ export class HomeComponent implements OnInit {
     mensaje: string = '';
     titleAlert: string = 'Completa este campo';
 
-    constructor(private mainService: MainService, private fb: FormBuilder, private modalService: NgbModal) {
+    partnerId: string = '1';
+
+    constructor(private mainService: MainService,
+                private fb: FormBuilder,
+                private modalService: NgbModal,
+                private route: ActivatedRoute) {
+
+        this.partnerId = this.route.snapshot.queryParams['partnerId'] ||  '1';
+
         this.rForm = fb.group({
             'nombre': [null, Validators.compose([
                 Validators.required,
@@ -58,7 +67,7 @@ export class HomeComponent implements OnInit {
     }
 
     public sendData(lead) {
-        console.log(lead);
+        lead.partnerId = this.partnerId;
         this.mainService.sendLead(lead);
     }
 
