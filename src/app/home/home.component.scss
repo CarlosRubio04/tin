@@ -4,6 +4,10 @@
     margin-top: -100px;
     left: 10%;
     font-weight: 800;
+
+    @media (max-width: 767px){
+        display: none;
+    }
 }
 
 .hero {
@@ -128,6 +132,9 @@
         position: relative;
         top: 50px;
 
+        @media (max-width: 767px){
+            top: 100px;
+        }
         h4 {
             text-align: center;
             color: $primary-color;

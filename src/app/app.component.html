@@ -18,7 +18,7 @@
 
 <!-- BTN CTA -->
 <button class="btn-danger btn btn-cta" (click)="showCta()">
-     CONTÁCTATE CON NOSOTROS
+    CONTÁCTATE CON NOSOTROS
 </button>
 <!-- BTN CTA -->
 
@@ -51,13 +51,7 @@
             </div>
         </div>
         <div class="form-group">
-            <span class="input-icon">
-                <i aria-hidden="true" class="fa fa-phone"></i>
-            </span>
-            <input class="form-control" placeholder="Teléfono" type="number" formControlName="tel" id="tel">
-            <div class="form-control-feedback" *ngIf="!rForm.controls['tel'].valid && rForm.controls['tel'].touched">
-                {{ titleAlert }}
-            </div>
+            <input class="form-control" placeholder="Teléfono" type="hidden" value="null" formControlName="tel" id="tel">
         </div>
         <div class="form-group">
             <span class="input-icon">
@@ -84,15 +78,13 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica">
-                    <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf" target="_blank">
-                        <small>Acepto la política de Datos Personales</small>
-                    </a>
-                    <span class="form-check-sign"></span>
-                </label>
-            </div>
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica" checked>
+                <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf"
+                    target="_blank">
+                    <small>Acepto la política de Datos Personales</small>
+                </a>
+            </label>
         </div>
         <div class="form-group form-btn">
             <button class="btn btn-danger btn-lg" type="submit" [disabled]="!rForm.valid">Enviar</button>

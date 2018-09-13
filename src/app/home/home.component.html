@@ -8,11 +8,14 @@
         <div class="hero-social">
             <ul>
                 <li><a href="https://facebook.com/TutularizadoraColombiana/
-                " target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                " target="_blank"><i class="fa fa-facebook-official"
+                            aria-hidden="true"></i></a></li>
                 <li><a href="https://www.youtube.com/channel/UCmpBsS3ED3kJIHqYI5CnIeQ
-                " target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                " target="_blank"><i
+                            class="fa fa-youtube" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/titularizadora-de-colombia/
-                " target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                " target="_blank"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
         </div>
         <!-- // Social Links -->
@@ -51,13 +54,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <span class="input-icon">
-                        <i aria-hidden="true" class="fa fa-phone"></i>
-                    </span>
-                    <input class="form-control" placeholder="Teléfono" type="number" formControlName="tel" id="tel">
-                    <div class="form-control-feedback" *ngIf="!rForm.controls['tel'].valid && rForm.controls['tel'].touched">
-                        {{ titleAlert }}
-                    </div>
+                    <input class="form-control" placeholder="Teléfono" type="hidden" value="null" formControlName="tel" id="tel">
                 </div>
                 <div class="form-group">
                     <span class="input-icon">
@@ -78,21 +75,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea rows="4" cols="50" class="form-control" formControlName="mensaje" id="mensaje" placeholder="Déjanos tus comentarios"></textarea>
+                    <textarea rows="4" cols="50" class="form-control" formControlName="mensaje" id="mensaje"
+                        placeholder="Déjanos tus comentarios"></textarea>
                     <div class="form-control-feedback" *ngIf="!rForm.controls['mensaje'].valid && rForm.controls['mensaje'].touched">
                         {{ titleAlert }}
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica">
-                            <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf" target="_blank">
-                               <small>Acepto la política de Datos Personales</small> 
-                            </a>
-                            <span class="form-check-sign"></span>
-                        </label>
-                    </div>
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" formControlName="politica" value="true">
+                        <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf"
+                            target="_blank">
+                            <small>Acepto la política de Datos Personales</small>
+                        </a>
+                    </label>
                 </div>
                 <div class="form-group form-btn">
                     <button class="btn btn-danger btn-lg" type="submit" [disabled]="!rForm.valid">Enviar</button>
@@ -238,9 +234,9 @@
                 <div class="title">
                     <p>Conoce más:</p>
                     <h2 class="special-text">
-                         Toma una <br>
-                         decisión <br>
-                         inteligente
+                        Toma una <br>
+                        decisión <br>
+                        inteligente
                     </h2>
                 </div>
 
@@ -249,21 +245,24 @@
                         <p>
                             Beneficios de ser un inversionista
                         </p>
-                        <a routerLink="/beneficios" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <a routerLink="/beneficios" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right"
+                                aria-hidden="true"></i></a>
                     </div>
 
                     <div class="item" routerLink="/inversion">
                         <p>
                             Conoce en qué estás invirtiendo tu dinero
                         </p>
-                        <a routerLink="/inversion" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <a routerLink="/inversion" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right"
+                                aria-hidden="true"></i></a>
                     </div>
 
                     <div class="item" routerLink="/estructura">
                         <p>
                             Conoce nuestra sólida estructura
                         </p>
-                        <a routerLink="/estructura" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <a routerLink="/estructura" class="btn btn-link">Ver más <i class="fa fa-long-arrow-right"
+                                aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

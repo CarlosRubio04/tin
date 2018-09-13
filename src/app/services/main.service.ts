@@ -20,7 +20,8 @@ export class MainService {
                 const backOffice = res;
                 console.log(backOffice);
                 if (backOffice.ok) {
-                    window.location.href = 'http://tin.titularizadora.com/tin/#/thanks';
+                    window.location.replace('http://tin.titularizadora.com/tin/#/thanks');
+                    window.location.reload();
                 } else {
                    alert('Hubo un error al enviar los datos, por favor intentalo de nuevo');
                 }

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h4 class="">
-                    INFORMACIÓN DE <br/> CONTÁCTO
+                    INFORMACIÓN DE <br /> CONTÁCTO
                 </h4>
 
                 <div class="contact-info">
@@ -31,8 +31,8 @@
                             <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
                         </div>
                         <div class="text">
-                             Carrera 9A No.99-02 Piso 7 <br/>
-                             Bogotá, colombia
+                            Carrera 9A No.99-02 Piso 7 <br />
+                            Bogotá, colombia
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
 
             <div class="col-md-8">
                 <h4 class="">
-                     Ponte en contácto
+                    Ponte en contácto
                 </h4>
 
                 <form [formGroup]="rForm" (ngSubmit)="sendData(rForm.value)" autocomplete="off">
@@ -59,7 +59,8 @@
                             <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-envelope"></i>
                             </span>
-                            <input class="form-control" placeholder="Correo electrónico" type="text" formControlName="email" id="email">
+                            <input class="form-control" placeholder="Correo electrónico" type="text" formControlName="email"
+                                id="email">
                             <div class="form-control-feedback" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
                                 {{ titleAlert }}
                             </div>
@@ -89,7 +90,8 @@
                             <span class="input-icon">
                                 <i aria-hidden="true" class="fa fa-user-o"></i>
                             </span>
-                            <input class="form-control" placeholder="Ocupación" type="text" formControlName="ocupacion" id="ocupacion">
+                            <input class="form-control" placeholder="Ocupación" type="text" formControlName="ocupacion"
+                                id="ocupacion">
                             <div class="form-control-feedback" *ngIf="!rForm.controls['ocupacion'].valid && rForm.controls['ocupacion'].touched">
                                 {{ titleAlert }}
                             </div>
@@ -105,21 +107,21 @@
                             </div>
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea rows="4" cols="50" class="form-control" formControlName="mensaje" id="mensaje" placeholder="Déjanos tus comentarios"></textarea>
+                            <textarea rows="4" cols="50" class="form-control" formControlName="mensaje" id="mensaje"
+                                placeholder="Déjanos tus comentarios"></textarea>
                             <div class="form-control-feedback" *ngIf="!rForm.controls['mensaje'].valid && rForm.controls['mensaje'].touched">
                                 {{ titleAlert }}
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica">
-                                    <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf" target="_blank">
-                                        <small>Acepto la política de Datos Personales</small>
-                                    </a>
-                                    <span class="form-check-sign"></span>
-                                </label>
-                            </div>
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="acepta" formControlName="politica">
+                                <a href="https://www.titularizadora.com/DownLoadFile.aspx?file=archivos/politicas/politicahabeasdata.pdf"
+                                    target="_blank">
+                                    <small>Acepto la política de Datos Personales</small>
+                                </a>
+                                <span class="form-check-sign"></span>
+                            </label>
                         </div>
                         <div class="form-group col-md-12">
                             <button class="btn btn-danger btn-lg" type="submit" [disabled]="!rForm.valid">Enviar</button>

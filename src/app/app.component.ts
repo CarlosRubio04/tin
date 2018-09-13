@@ -95,11 +95,7 @@ export class AppComponent implements OnInit {
                 Validators.minLength(7),
                 Validators.maxLength(7)
             ])],
-            'tel': [null, Validators.compose([
-                Validators.required,
-                Validators.minLength(10),
-                Validators.maxLength(10)
-            ])],
+            'tel': [null],
             'email': [null, Validators.compose([
                 Validators.required,
                 Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
