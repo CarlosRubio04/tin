@@ -88,7 +88,7 @@ export class AppComponent implements OnInit {
             'nombre': [null, Validators.compose([
                 Validators.required,
                 Validators.minLength(3),
-                Validators.maxLength(140)
+                Validators.maxLength(240)
             ])],
             'cel': [null, Validators.compose([
                 Validators.required,
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
             'tel': [null],
             'email': [null, Validators.compose([
                 Validators.required,
-                Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+                Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
             ])],
             'ciudad': [null, Validators.compose([
                 Validators.required
