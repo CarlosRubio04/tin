@@ -6,6 +6,9 @@
     bottom: 20%;
     right: -85px;
     transform: rotate(-90deg);
+    @media (max-width: 767px){
+      bottom: 50%;
+    }
 }
 
 .main-cta {
@@ -43,6 +46,9 @@
     bottom: 0;
     left: 40px;
     border-radius: 4px 4px 0 0;
+    @media (max-width: 767px){
+      left: 28%;
+    }
 }
 
 .caracteristics {
